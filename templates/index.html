@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mission to Mars</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
@@ -16,20 +17,101 @@
       <button onclick="window.location.href='/launch'" type="button" class="btn btn-primary">Launch!</button>
     </div>
   </div>
-  <div>
-    <ul style="list-style: none;">
-        <li>{{ mars.article_date }}</li>
-        <li>{{ mars.article_title }}</li>
-        <li>{{ mars.article_teaser }}</li>
-        <li><img src="{{ mars.img_url }}"></li>
-        <li>{{ mars.last_tweet }}</li>
-        <li>{{ mars.table }}</li>
-        <li><img src="{{ mars.marsimg_0}}"></li>
-        <li><img src="{{ mars.marsimg_1}}"></li>
-        <li><img src="{{ mars.marsimg_2}}"></li>
-        <li><img src="{{ mars.marsimg_3}}"></li>
-    </ul>
+  <div class="container">
+    <div class="row">
+      <div class="col-3" style="background-color:#e9ecef;">
+        <ul style="list-style: none;">
+          <li>{{ mars.mars_table | safe}}</li>
+        </ul>
+      </div>
+      <div class="col-6">
+        <img src="{{ mars.img_url }}" class="img-fluid">
+      </div>
+      <div class="col-3" style="background-color:#e9ecef;">
+        <ul style="list-style: none;">
+          <li>
+            <h3>Lastest Headline</h3>
+          </li>
+          <li><strong>{{ mars.article_date }} - {{ mars.article_title }}</strong></li>
+          <li><em>{{ mars.article_teaser }}</em></li>
+          <li>
+            <p></p>
+          </li>
+          <li><strong>Current Weather via <a href="https://twitter.com/marswxreport?lang=en">@MarsWXReport</a></strong>
+          </li>
+          <li>{{ mars.last_tweet }}</li>
+        </ul>
+      </div>
+    </div>
   </div>
+  <div class="container">
+    <div style="margin: 20px">
+      <p></p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <a href="{{ mars.marsimg_0}}" target="_blank"><img src="{{ mars.marsimg_0}}" class="img-thumbnail"></a>
+          <div class="card-body">
+            <h5 class="card-title">{{ mars.marstitle_0}}</h5>
+            <p class="card-text">View full image of the {{ mars.marstitle_0}}.</p>
+            <a href="{{ mars.marsdld_0}}" class="btn btn-primary">Download</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <a href="{{ mars.marsimg_1}}" target="_blank"><img src="{{ mars.marsimg_1}}" class="img-thumbnail"></a>
+          <div class="card-body">
+            <h5 class="card-title">{{ mars.marstitle_1}}</h5>
+            <p class="card-text">View full image of the {{ mars.marstitle_1}}.</p>
+            <a href="{{ mars.marsdld_1}}" class="btn btn-primary">Download</a>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div style="margin: 20px">
+          <p> </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <a href="{{ mars.marsimg_2}}" target="_blank"><img src="{{ mars.marsimg_2}}" class="img-thumbnail"></a>
+            <div class="card-body">
+              <h5 class="card-title">{{ mars.marstitle_2}}</h5>
+              <p class="card-text">View full image of the {{ mars.marstitle_2}}.</p>
+              <a href="{{ mars.marsdld_2}}" class="btn btn-primary">Download</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <a href="{{ mars.marsimg_3}}" target="_blank"><img src="{{ mars.marsimg_3}}" class="img-thumbnail"></a>
+            <div class="card-body">
+              <h5 class="card-title">{{ mars.marstitle_3}}</h5>
+              <p class="card-text">View full image of the {{ mars.marstitle_3}}.</p>
+              <a href="{{ mars.marsdld_3}}" class="btn btn-primary">Download</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
 </body>
 
 </html>

@@ -51,6 +51,8 @@ def scrape():
     url = 'https://space-facts.com/mars/'
     tables = pd.read_html(url)
     mars_df = tables[0]
+    mars_df.columns = ['Statistic','Values']
+    mars_df = mars_df.set_index('Statistic')
     mars_table = mars_df.to_html()
     mars_table = mars_table.replace('\n', '')
     return_dict.update({'mars_table':mars_table})
@@ -67,8 +69,13 @@ def scrape():
         downloads = soup.find('div', class_="downloads")
         dl_links = downloads.find_all('a')
         img_link = dl_links[0].get('href')
+        dld_link = dl_links[1].get('href')
         title = soup.find('h2', class_="title").text
-        mars_urls.update({f"marsimg_{x}" : img_link})
+        mars_urls.update({
+            f"marsimg_{x}" : img_link,
+            f"marstitle_{x}": title,
+            f"marsdld_{x}": dld_link
+        })
         browser.back()
     return_dict.update(mars_urls)
 
