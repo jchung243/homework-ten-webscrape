@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container text-center">
+    <div class="jumbotron">
+      <h1>Mission to Mars</h1>
+      <button onclick="window.location.href='/launch'" type="button" class="btn btn-primary">Launch!</button>
+    </div>
+  </div>
+  <div>
+    <ul style="list-style: none;">
+        <li>{{ mars.article_date }}</li>
+        <li>{{ mars.article_title }}</li>
+        <li>{{ mars.article_teaser }}</li>
+        <li><img src="{{ mars.img_url }}"></li>
+        <li>{{ mars.last_tweet }}</li>
+        <li>{{ mars.table }}</li>
+        <li><img src="{{ mars.marsimg_0}}"></li>
+        <li><img src="{{ mars.marsimg_1}}"></li>
+        <li><img src="{{ mars.marsimg_2}}"></li>
+        <li><img src="{{ mars.marsimg_3}}"></li>
+    </ul>
+  </div>
+</body>
+
+</html>
